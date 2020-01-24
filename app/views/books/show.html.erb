@@ -1,0 +1,16 @@
+<h1>
+    Selected Book:
+</h1>
+
+Title: <%= @book.title %> <br>
+Author(s): <% @book.authors.each do |author| %>
+    <%= author.first_name %> 
+    <%= author.last_name %> <br>
+<% end %>
+Genre: <%= @book.genre %> <br> <br> <br> <br>
+<h3>Reviews:</h3> <% @book.reviews.each do |review| %> <br>
+    <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-1knd2un_0cf74357.jpeg?region=0,0,600,600" style="width:65px;height:65px;"> <br>
+            User: <%= review.user.username %> <br>
+            Text: <%= "\"#{review.text}\"" %> <br> <br> <br> <br>
+         <% end %>
+

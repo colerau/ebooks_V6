@@ -1,0 +1,15 @@
+<h1>e-books homepage</h1>
+<h3>All Books:</h3>
+<% @books.each do |book| %>
+    
+    <img src="http://www.clker.com/cliparts/2/y/e/g/Q/K/blue-book.svg" style="width:50px;height:40px;"> <br>
+    Title: <%= link_to book.title, book_path(book.id) %> <br>
+    Author(s): <% book.authors.each do |author| %>
+                <%= author.first_name %> 
+                <%= author.last_name %> <br>
+            <% end %>
+    Genre: <%= book.genre %> <br> <br>
+    <%= link_to 'Review Book', :controller => :reviews, :action => :new %> <br> <br> <br> <br> <br> <br>
+
+<% end %>
+
